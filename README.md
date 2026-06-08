@@ -11,16 +11,16 @@
 <br />
 
 ## The Challenge
-HCA Healthcare required a complete architectural overhaul of their talent acquisition ecosystem. The core objective was to consolidate an immense network of independent medical facilities and regional locations into a single, unified enterprise career web platform. This presented massive, competing technical challenges:
+HCA Healthcare required a complete overhaul of their talent acquisition portal. The core objective was to consolidate an immense network of independent medical facilities and regional locations into a single, unified enterprise career web platform. This presented massive, competing technical challenges:
 
-**Multi-Tenant Brand Parity vs. Core Layout Control:**<br />
-The platform had to support distinct branding profiles, specialized layout variations, and completely independent web properties for sister brands (such as HCA Tech, Mission Health, and a specialized corporate Events portal). Each required unique navigation architectures, individual sub-logos, and custom data schemas while sharing a localized base layout engine.
+**Multi-Tenant Brand Consistency vs Core Layout Control:**<br />
+The platform had to support distinct branding profiles, specialized layout variations, and completely independent web properties for sister brands, and a specialized Career Events portal. Each required unique navigation architectures, individual logos, and custom data schemas while sharing a localized base layout engine.
 
 **Severe CMS Restrictions**<br />
-The underlying legacy vendor platform restricted content administrators to a single WYSIWYG text field per page layout. Non-technical recruitment teams needed a way to easily build multi-tiered, component-heavy pages without writing raw HTML or altering master files.
+The underlying vendor platform restricted content administrators to a single WYSIWYG text field per page layout. Non-technical HR teams needed a way to easily build multi-tiered, component-heavy pages without writing HTML.
 
 **Design Usability & Accessibility Gaps**<br />
-The client’s creative marketing agency delivered highly customized InVision mockups that introduced severe real-world usability flaws and Web Content Accessibility Guidelines (WCAG) compliance issues.
+The client’s creative marketing agency delivered beautiful highly customized InVision mockups, but it also introduced several real-world usability flaws and Web Content Accessibility Guidelines (WCAG) compliance issues.
 
 **Hyper-Complex Business Logic**<br />
 The front-end needed to handle enterprise-level functional parameters natively, ranging from custom multi-conditional Application Tracking System (ATS) workflows to real-time asynchronous API content parsing.
@@ -29,19 +29,19 @@ The front-end needed to handle enterprise-level functional parameters natively, 
 
 ## Core Objectives
 🟠 **Unified Enterprise Governance**<br />
-Architect a single global theme framework using specialized tag-detection logic to render custom page types (Job Families, Facilities, Locations, and Campaigns).
+Build a single global theme framework using specialized tag-detection logic to render custom page types (Job Families, Facilities, Locations, and Campaigns).
 
 🟠 **The "Page Stacks" Engine**<br />
-Transform a single restrictive text field into a modular layout engine featuring over 15 distinct presentation components (banner carousels, accordion FAQs, multi-column cards).
+Transform a single restrictive text field into a modular layout engine featuring over 15 distinct components (banner carousels, accordion FAQs, multi-column cards).
 
 🟠 **Technical Quality Advocacy**<br />
-Perform rigorous front-end audits to correct structural semantic issues introduced by the third-party agency.
+Perform front-end audits to correct structural semantic issues introduced by the third-party agency.
 
 🟠 **State Management & Data Persistence**<br />
-Deploy client-side scripting and cross-domain tracking arrays to persist user searches, bookmarks, and targeted media delivery.
+Deploy client-side scripting and cross-domain tracking to persist user searches, bookmarks, and targeted media delivery.
 
 🟠 **Scalable Theme Inheritance Matrix:**<br />
-Engineer a centralized parent theme to run all child domains simultaneously, eliminating code drift, preventing human omission errors during manual deployment cycles, and easing systemic architecture updates.
+Engineer a centralized parent theme to run all domains simultaneously, eliminating code drift, preventing human omission errors during manual deployment cycles, and easing systemic architecture updates.
 
 🟠 **Component-Driven A/B Performance Testing:**<br />
 Implement structural conditional routing rules within the Job Detail template files to automatically set layouts based on the listing's category, enabling precise conversion performance audits.
