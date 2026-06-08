@@ -60,44 +60,46 @@ During the full scale-up, I performed a rigorous accessibility and user-experien
 Furthermore, when the agency insisted on locking button text containers to absolute lengths, I fought for fluid design adaptability to protect the non-technical administration team from broken text layouts when utilizing longer localized phrases. While the client initially deferred to their creative agency, an independent post-launch quality audit verified all of my initial warnings, prompting immediate structural remediations that perfectly matched my original recommendations.
 
 ### 2. Engineering the "Page Stacks" Component Architecture
-To completely bypass the structural limits of a single-field WYSIWYG editor, I designed a server-side parsing architecture using Liquid Markup. I, along with the stakeholders and their design agency created a system called Page Stacks, which are completely separated content components managed cleanly via tag structures and centralized config templates.
+To completely bypass the structural limits of a single-field WYSIWYG editor, I designed a server-side parsing architecture using Liquid Markup. I created a system called Page Stacks, which are completely separated content components managed cleanly via tag structures and centralized config templates.
 
-Instead of allowing raw text dumps, my layout layer intercepts page permalinks to automatically construct dynamic component tag loops (such as `{{ page_permalink }}-stack`). The code isolates page logic via conditional checkpoints. As an example, If the system catches the pages-our-job-families block, it avoids layout blocks entirely and instead kicks off an automated multi-column element loop.
+Instead of allowing raw text dumps, my layout layer intercepts page permalinks to automatically construct dynamic component tag loops (such as `{{ page_permalink }}-stack`). The code processes these tags and maps them directly into custom layouts using specialized conditional checkpoints:
 
-This architecture also programmatically transforms standard job search routing parameters into active client-side JSON output.
+**Automated Content Separation**<br />
+I wrote a parsing script using advanced string text filters (like `split: '---'` and remove: `<p class="job-list">`) to read simple text fields from the CMS, break them down at designated points, and output clean, faceted job lists on the fly.
 
-### 3. Asynchronous APIs & Client-Side Engineering
+**Smart Asset Overrides**<br />
+I implemented strict parameters that evaluate file counts and types (`page.images.size > 2`). If a recruiter uploads multiple files, the code shifts image grids into layered layouts automatically, wraps text containers into fully fluid responsive wrappers (`class="embed-responsive-item"`), and appends accessibility hooks (`class="sr-only sr-only-focusable"`).
+
+**Layout Swapping Loops**<br />
+If the system catches a specific tag layout, like a job family block, it completely bypasses standard text layouts and initiates an automated multi-column element loop. This loop hooks into search variables to transform raw routing parameters into active client-side JSON channels.
+
+
+### 3. Custom Enterprise Frontend Features
 To turn static layout files into an interactive web application, I integrated several high-performance scripts directly into the template loops:
 
-**Centralized Parent Theme Architecture:**<br />
+**Centralized Parent Theme:**<br />
 To run the universal site alongside the separate specialized brand portals, I developed a master theme. Instead of copying source files across multiple platforms, which introduces human error and code omissions, updates were written once to this theme and re-applied universally. This guaranteed absolute functional consistency and seamless cross-site interactions.
 
 **Dynamic Header/Footer:**<br />
 Because a master theme forces global header and footer structures, I solved this problem by coding a hook. The theme intercepts individual site IDs and dynamically reads separate, tagged content pages containing localized navigation managed by non-technical HR teams. This gave them full control over separate site layouts and deep linking hierarchies without touching core template files.
 
-**Geo API Integrations:**<br />
+**Google API Integrations:**<br />
 I integrated Google Maps and Google Locations APIs into the theme. This powered intelligent location autocomple, radius search functionality, and custom map pinning directly across individual facility pages and Job Detail pages.
 
-**Asynchronous A/B Experimentation:**<br />
-To optimize conversion rates on the Job Detail pages, I built a server-side template routing switch. The logic evaluates the specific job category parameter of the posting: if the category matches the target test criteria, the engine renders a separatae layout; else, it defaults to the standard layout. This provided a clean, database-free testing framework.
+**Simple A/B Testing Logic::**<br />
+To see which layouts performed better on Job Detail pages, I wrote a simple conditional switch. The logic evaluates the specific job category parameter of the posting: if the category matches the target test criteria, the engine renders a separatae layout; else, it defaults to the standard layout. This provided a clean, database-free testing framework.
 
 **Real-Time Data Output**<br />
 To display exact, live job openings metrics on top-level category cards without page lag, I wrote asynchronous jQuery hooks inside the Liquid layout engine. The system fires off JSON requests against the generated page-specific paths, extracts the total dataset entries array, and cleanly overwrites default container flags with live numbers.
 
-**Automated Data Separation**<br />
-I built a parsing script that uses advanced string manipulation filters (like `split: '---'` and remove: `<p class="job-list">`) to read text arrays, extract localized endpoints, and seamlessly output faceted job modules right within the template.
+### 4. Saving Jobs and Facilities Natively
+Because we didn't have a database to handle logged-in user states, I built a custom system entirely on the front-end using the browser's localStorage and background jQuery ($.get) calls to manage the bookmarking features:
 
-**Component-Driven Layouts & Overrides**<br />
-I implemented robust conditional parameters that evaluate asset sizing metrics (`page.images.size > 2`). This logic shifts image grids into layered visual configurations, swaps iframe elements into fully fluid responsive wrappers (`class="embed-responsive-item"`), appends strict screen-reader navigation hooks (`class="sr-only sr-only-focusable"`), and maps proximity event listings down from separate regional nodes via targeted parameters.
+**Saved Jobs Workflow (detectsavedjob / savejob)**<br />
+I wrote a tracking script that watches an array of bookmarked jobs. When a user saves a job, the script records the job's ID, updates the site-wide search path dynamically, and changes the browser URL smoothly without forcing a hard page reload using window.history.pushState. It then runs an asynchronous background call to update the job counts and lists behind a clean alert fade-in animation for accessibility.
 
-### 4. Client-Side State Engines & Data Persistence
-To handle enterprise-grade personalization without a state-driven database, I designed client-side storage frameworks powered by modern browser localStorage and background asynchronous UI reconciliation ($.get):
-
-**Bi-Directional Saved Job Workflows (detectsavedjob / savejob):**<br />
-I wrote a tracking module that monitors target arrays. When a user interacts with a bookmark trigger, the script saves product parameters, updates site-wide query pathways dynamically, pushes states without triggering hard page reloads using HTML5 history loops (window.history.pushState), and performs smooth AJAX layout updates behind an alert animation wrapper.
-
-**Facility Clustering States (detectsavedfacility / savefacility):**<br />
-Mirroring the save job fucntionality, the platform utilizes custom browser strings inside template execution loops to check if an active medical facility page is bookmarked. The architecture removes UI clutter by instantly hiding unneeded buttons during initial page evaluation, providing candidates with a unified tracking experience.
+**Saved Facilities Workflow (detectsavedfacility / savefacility)**<br />
+Following a similar logic, the script checks if a candidate has bookmarked a specific medical facility while the page is loading. It instantly handles button visibility toggles (hiding the "Save" button and revealing the "Unsave" button by managing the d-none utility class), preventing the layout from flashing or looking cluttered to the user.
 
 ### 5. Automated Performance Optimization & Auditing
 With hundreds of pages densely packed with heavy corporate media assets, web optimization was critical. I built asset performance rules into the core layout loop that targeted text and image sections. The code dynamically audited elements and appended native loading="lazy" tags to images, forcing the browser to defer downloading below-the-fold graphics until scrolled into view.
