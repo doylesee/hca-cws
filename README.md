@@ -1,9 +1,9 @@
 ## Project Overview
 <pre>
-<b>Project:</b>   HCA Careers
-<b>Role:</b>      Lead UI Developer & System Architect
-<b>Tools:</b>     InVision, Liquid, HTML5, CSS3, JS/jQuery, Bootstrap
-    JSON, ATS Integrations, LocalStorage, Google APIs
+<b>Project:</b>  HCA Careers
+<b>Role:</b>     Lead UI Developer & System Architect
+<b>Tools:</b>    InVision, Liquid, HTML5, CSS3, JS/jQuery, Bootstrap
+          JSON, ATS Integrations, LocalStorage, Google APIs
 </pre>
 &nbsp;<strong><a href="https://careers.hcahealthcare.com/" rel="noopener noreferrer">View project</a></strong>
 
