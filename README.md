@@ -91,10 +91,13 @@ I built a parsing script that uses advanced string manipulation filters (like sp
 I implemented robust conditional parameters that evaluate asset sizing metrics (page.images.size > 2). This logic shifts image grids into layered visual configurations, swaps iframe elements into fully fluid responsive wrappers (class="embed-responsive-item"), appends strict screen-reader navigation hooks (class="sr-only sr-only-focusable"), and maps proximity event listings down from separate regional nodes via targeted parameters.
 
 ### 4. Client-Side State Engines & Data Persistence
-To handle enterprise-grade personalization without a state-driven database, I designed client-side storage frameworks powered by modern browser `localStorage` and background asynchronous UI reconciliation (`$.get`):
+To handle enterprise-grade personalization without a state-driven database, I designed client-side storage frameworks powered by modern browser localStorage and background asynchronous UI reconciliation ($.get):
 
-* **Bi-Directional Saved Job Workflows (`detectsavedjob` / `savejob`):** I wrote a tracking module that monitors target arrays (`jobs_key`). When a user interacts with a bookmark trigger, the script saves product parameters, updates site-wide query pathways dynamically (`/jobs/search?&ns_saved=1`), pushes states without triggering hard page reloads using HTML5 history loops (`window.history.pushState`), and performs smooth AJAX layout updates behind an alert animation wrapper.
-* **Facility Clustering States (`detectsavedfacility` / `savefacility`):** Mirroring the job pipeline, the platform utilizes custom browser strings (`facilities_key`) inside template execution loops to check if an active medical facility page is bookmarked. The architecture removes UI clutter by instantly hiding unneeded buttons (`removeClass('d-none')`) during initial page evaluation, providing candidates with a unified tracking experience.
+**Bi-Directional Saved Job Workflows (detectsavedjob / savejob):**<br />
+I wrote a tracking module that monitors target arrays. When a user interacts with a bookmark trigger, the script saves product parameters, updates site-wide query pathways dynamically, pushes states without triggering hard page reloads using HTML5 history loops (window.history.pushState), and performs smooth AJAX layout updates behind an alert animation wrapper.
+
+**Facility Clustering States (detectsavedfacility / savefacility):**<br />
+Mirroring the save job fucntionality, the platform utilizes custom browser strings inside template execution loops to check if an active medical facility page is bookmarked. The architecture removes UI clutter by instantly hiding unneeded buttons during initial page evaluation, providing candidates with a unified tracking experience.
 
 ### 5. Automated Performance Optimization & Auditing
 With hundreds of pages densely packed with heavy corporate media assets, web optimization was critical. I built asset performance rules into the core layout loop that targeted text and image sections. The code dynamically audited elements and appended native loading="lazy" tags to images, forcing the browser to defer downloading below-the-fold graphics until scrolled into view.
