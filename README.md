@@ -57,26 +57,26 @@ This project was executed across two distinct phases. To facilitate HCA’s rapi
 
 During the full scale-up, I performed a rigorous accessibility and user-experience audit on the InVision design deliverables. I identified and aggressively flagged systemic flaws. For example, the design agency attempted to enforce standard HTML `<button>` elements utilizing complex JavaScript click actions for basic page linking, rather than semantic anchor tags (`<a>`). I advocated directly for the non-technical administration team, demonstrating that native `<a>` elements seamlessly integrate with standard WYSIWYG editors, reducing any friction.
 
-Furthermore, when the agency insisted on locking button text containers to absolute lengths, I fought for fluid design adaptability to protect content editors from broken text layouts when utilizing longer localized phrases. While the client initially deferred to their creative agency, an independent post-launch quality audit verified all of my initial warnings, prompting immediate structural remediations that perfectly matched my original structural recommendations.
+Furthermore, when the agency insisted on locking button text containers to absolute lengths, I fought for fluid design adaptability to protect the non-technical administration team from broken text layouts when utilizing longer localized phrases. While the client initially deferred to their creative agency, an independent post-launch quality audit verified all of my initial warnings, prompting immediate structural remediations that perfectly matched my original recommendations.
 
 ### 2. Engineering the "Page Stacks" Component Architecture
-To completely bypass the structural limits of a single-field WYSIWYG editor, I designed a server-side parsing architecture using Liquid Markup. I, along with the stakeholders and their design agency created a system called Page Stacks, completely separated content components managed cleanly via tag structures and centralized config templates.
+To completely bypass the structural limits of a single-field WYSIWYG editor, I designed a server-side parsing architecture using Liquid Markup. I, along with the stakeholders and their design agency created a system called Page Stacks, which are completely separated content components managed cleanly via tag structures and centralized config templates.
 
 Instead of allowing raw text dumps, my layout layer intercepts page permalinks to automatically construct dynamic component tag loops (such as `{{ page_permalink }}-stack`). The code isolates page logic via conditional checkpoints. As an example, If the system catches the pages-our-job-families block, it avoids layout blocks entirely and instead kicks off an automated multi-column element loop.
 
-This architecture also programmatically transforms standard job search routing parameters into active client-side JSON channels.
+This architecture also programmatically transforms standard job search routing parameters into active client-side JSON output.
 
 ### 3. Asynchronous APIs & Client-Side Engineering
 To turn static layout files into an interactive web application, I integrated several high-performance scripts directly into the template loops:
 
 **Centralized Parent Theme Architecture:**<br />
-To run the universal site alongside the separate specialized brand portals (HCA Tech, Mission Health, Events), I developed a master theme. Instead of copying source files across multiple platform endpoints, which introduces human error and code omissions, updates were written once to this theme and re-applied universally. This guaranteed absolute functional consistency and seamless cross-site interactions.
+To run the universal site alongside the separate specialized brand portals, I developed a master theme. Instead of copying source files across multiple platforms, which introduces human error and code omissions, updates were written once to this theme and re-applied universally. This guaranteed absolute functional consistency and seamless cross-site interactions.
 
-**Dynamic Header/Footer Inversion:**<br />
-Because a master theme forces global header and footer structures, I solved the rigidity problem by coding a hook. The theme intercepts individual site IDs and dynamically reads separate, tagged content pages containing localized navigation managed by non-technical HR teams. This gave them full control over separate site layouts and deep linking hierarchies without touching core template files.
+**Dynamic Header/Footer:**<br />
+Because a master theme forces global header and footer structures, I solved this problem by coding a hook. The theme intercepts individual site IDs and dynamically reads separate, tagged content pages containing localized navigation managed by non-technical HR teams. This gave them full control over separate site layouts and deep linking hierarchies without touching core template files.
 
 **Geo API Integrations:**<br />
-I integrated Google Maps and Google Locations APIs into the theme. This powered intelligent user location autocompletion, radius search functionality, and custom  map pinning directly across individual facility hubs and active Job Detail descriptions.
+I integrated Google Maps and Google Locations APIs into the theme. This powered intelligent location autocomple, radius search functionality, and custom map pinning directly across individual facility pages and Job Detail pages.
 
 **Asynchronous A/B Experimentation:**<br />
 To optimize conversion rates on the Job Detail pages, I built a server-side template routing switch. The logic evaluates the specific job category parameter of the posting: if the category matches the target test criteria, the engine renders a separatae layout; else, it defaults to the standard layout. This provided a clean, database-free testing framework.
@@ -85,10 +85,10 @@ To optimize conversion rates on the Job Detail pages, I built a server-side temp
 To display exact, live job openings metrics on top-level category cards without page lag, I wrote asynchronous jQuery hooks inside the Liquid layout engine. The system fires off JSON requests against the generated page-specific paths, extracts the total dataset entries array, and cleanly overwrites default container flags with live numbers.
 
 **Automated Data Separation**<br />
-I built a parsing script that uses advanced string manipulation filters (like `split: '---'` and remove: `<p class="job-list">`) to read text arrays, extract localized endpoints, and seamlessly mount asynchronous facet job modules right within the running template tree.
+I built a parsing script that uses advanced string manipulation filters (like `split: '---'` and remove: `<p class="job-list">`) to read text arrays, extract localized endpoints, and seamlessly output faceted job modules right within the template.
 
 **Component-Driven Layouts & Overrides**<br />
-I implemented robust conditional parameters that evaluate asset sizing metrics (`page.images.size > 2`). This logic shifts image grids into layered visual configurations, swaps iframe elements into fully fluid responsive wrappers (class="embed-responsive-item"), appends strict screen-reader navigation hooks (`class="sr-only sr-only-focusable"`), and maps proximity event listings down from separate regional nodes via targeted parameters.
+I implemented robust conditional parameters that evaluate asset sizing metrics (`page.images.size > 2`). This logic shifts image grids into layered visual configurations, swaps iframe elements into fully fluid responsive wrappers (`class="embed-responsive-item"`), appends strict screen-reader navigation hooks (`class="sr-only sr-only-focusable"`), and maps proximity event listings down from separate regional nodes via targeted parameters.
 
 ### 4. Client-Side State Engines & Data Persistence
 To handle enterprise-grade personalization without a state-driven database, I designed client-side storage frameworks powered by modern browser localStorage and background asynchronous UI reconciliation ($.get):
