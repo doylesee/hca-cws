@@ -78,7 +78,7 @@ If the system catches a specific tag layout, like a job family block, it complet
 To turn static layout files into an interactive web application, I integrated several high-performance scripts directly into the template loops:
 
 **Centralized Parent Theme:**<br />
-To run the universal site alongside the separate specialized brand portals, I developed a master theme. Instead of copying source files across multiple platforms, which introduces human error and code omissions, updates were written once to this theme and re-applied universally. This guaranteed absolute functional consistency and seamless cross-site interactions.
+To run the universal site alongside other separate specialized brand portals, I developed a master theme. Instead of copying source files across multiple platforms, which introduces human error and code omissions, updates were written once to this theme and re-applied universally. This guaranteed absolute functional consistency and seamless cross-site interactions.
 
 **Dynamic Header/Footer:**<br />
 Because a master theme forces global header and footer structures, I solved this problem by coding a hook. The theme intercepts individual site IDs and dynamically reads separate, tagged content pages containing localized navigation managed by non-technical HR teams. This gave them full control over separate site layouts and deep linking hierarchies without touching core template files.
@@ -101,16 +101,26 @@ I wrote a tracking script that watches an array of bookmarked jobs. When a user 
 **Saved Facilities Workflow (detectsavedfacility / savefacility)**<br />
 Following a similar logic, the script checks if a candidate has bookmarked a specific medical facility while the page is loading. It instantly handles button visibility toggles (hiding the "Save" button and revealing the "Unsave" button by managing the d-none utility class), preventing the layout from flashing or looking cluttered to the user.
 
-### 5. Automated Performance Optimization & Auditing
-With hundreds of pages densely packed with heavy corporate media assets, web optimization was critical. I built asset performance rules into the core layout loop that targeted text and image sections. The code dynamically audited elements and appended native loading="lazy" tags to images, forcing the browser to defer downloading below-the-fold graphics until scrolled into view.
+### 5. Quality Assurance, Accessibility, and Compatibility
+Because a massive healthcare career network serves millions of diverse candidates, ensuring the platform was fully accessible and stable across all devices was a top priority:
 
-I rigorously monitored performance metrics using Google Lighthouse. My semantic, modular frontend code achieved exceptional raw performance scores between 85 and 95, ensuring a highly performant and stable foundation despite heavy tracking scripts and external CMS application layers.
+**Rigorous Web Accessibility (WCAG) Checks**<br />
+Working with the stakeholders, we built strict accessibility checks. I ensured all custom structural elements were semantically coded, includes screen-reader navigation hooks (`class="sr-only sr-only-focusable"`), and proper keyboard navigation capabilities to guarantee the site passed standard web accessibility audits.
+
+**Fluid Responsive Infrastructure**<br />
+I ensured every single one of the 15+ custom Page Stack components was fully mobile-responsive. Layout blocks dynamically adjusted content grids, image sections, and embedded video wrappers (`class="embed-responsive-item"`) seamlessly across all mobile devices, tablets, and desktop screen sizes.
+
+**Cross-Browser Compatibility**<br />
+I extensively tested and optimized the code to ensure flawless rendering and functional stability across all modern web browsers. This guaranteed that interactive elements, like the localized Google Maps pins and the client-side localStorage bookmarking scripts behaved consistently no matter what browser a candidate used.
 
 <br />
 
 ## Results & Impact
-✅ **Massive Enterprise Consolidation**<br />
-Successfully migrated a sprawling digital footprint of independent healthcare facility websites into a single, high-performance, universally maintainable web framework.
+✅ **Successful Enterprise Migration**<br />
+Consolidated a massive network of separate healthcare facility sites into a single, high-performance web platform that is easy to maintain.
+
+✅ **Centralized Design & Maintenance:**<br />
+Developed a master theme system that eliminated the need to duplicate code across individual sites. By controlling global elements from a central theme, design updates were pushed across multiple separate sites simultaneously, cutting down hours of maintenance and preventing manual code omission errors entirely.
 
 ✅ **Empowered Non-Technical Operations**<br />
 Created a robust, modular "Page Stack" page-builder tool and successfully transitioned platform ownership to HCA’s HR teams through live training workshops and custom-authored Content Management Documentation. This comprehensive handover strategy saved hundreds of annual developer support hours by enabling non-technical staff to easily manage custom pages, complex layouts, emergency alerts, and event systems completely independently.
@@ -118,7 +128,7 @@ Created a robust, modular "Page Stack" page-builder tool and successfully transi
 ✅ **Validated Technical Strategy**<br />
 Championed modern accessibility and semantic engineering guidelines. My technical foresight was verified by post-launch quality audits, establishing my reputation as an authoritative guide on high-fidelity, web-accessible development.
 
-✅ **Platform Processing Stability**<br />
-Successfully executed hyper-complex multi-conditional checkout logic—handling seamless transitions between native career registration prompts, complex iCIMS BID-mapping URL reconstructions, and standard automated Talemetry application workflows without data dropping.
+✅ **Smooth Application Workflows**<br />
+Successfully executed complex multi-conditional logic, handling seamless transitions between complex iCIMS BID-mapping URL reconstructions, standard automated Talemetry application workflows, and event registrations without data dropping.
 
 <br /><strong><a href="https://careers.hcahealthcare.com/" rel="noopener noreferrer">View project</a></strong>
